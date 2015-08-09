@@ -1,0 +1,17 @@
+body {
+   background-color: #BDC9C6;
+}
+
+h1 {
+    padding-left: 20px;
+    color: #FFFFFF;
+    background-color: #47605A;
+}
+
+.messageDiv {
+    background-color: #A6BBB6;
+}
+
+.messageDiv h3, p {
+    padding-left: 20px;
+}

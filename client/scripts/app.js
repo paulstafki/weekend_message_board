@@ -11,10 +11,13 @@ function getMessages() {
 function updateMessages(data) {
     $('.dataDiv').empty();
     for (var i = 0; i < data.length; i++) {
-        $('.dataDiv').append('<div></div>');
+        $('.dataDiv').append('<div class="messageDiv"></div>');
         var $short = $('.dataDiv').children().last();
+        $short.append('<hr>');
         $short.append("<h3>" + data[i].name + "</h3>");
+        $short.append('<hr>');
         $short.append("<p>" + data[i].message + "</p>");
+        $short.append('<hr>');
         //$short.append("<button data-id=" + data[i]._id + ">DELETE</button>");
     }
 }

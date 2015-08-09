@@ -26,6 +26,8 @@ app.use(bodyParser.urlencoded({expanded:true}));
 
 app.set("port", (process.env.PORT || 5000));
 
+
+
 app.use("/things", things);
 app.use("/", index);
 
