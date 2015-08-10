@@ -18,7 +18,9 @@ function updateMessages(data) {
         $short.append('<hr>');
         $short.append("<p>" + data[i].message + "</p>");
         $short.append('<hr>');
-        //$short.append("<button data-id=" + data[i]._id + ">DELETE</button>");
+        if (document.location.href == 'http://localhost:5000/secret') {
+            $short.append("<button data-id=" + data[i]._id + ">DELETE</button>");
+        }
     }
 }
 
@@ -38,22 +40,22 @@ $(document).ready(function (){
             }
         });
     });
-    //$('.dataDiv').on('click', 'button', function(){
-    //    $.ajax({
-    //        type: "DELETE",
-    //        url: "/things/" + $(this).data("id"),
-    //        success: function(){
-    //            console.log("Hes dead Jim!");
-    //        },
-    //        error: function(){
-    //            alert("Error: ", status);
-    //        },
-    //        complete: function(){
-    //            console.log("Delete Complete!");
-    //        }
-    //    });
-    //    $(this).parent().remove();
-    //});
+    $('.dataDiv').on('click', 'button', function(){
+        $.ajax({
+            type: "DELETE",
+            url: "/things/" + $(this).data("id"),
+            success: function(){
+                console.log("Hes dead Jim!");
+            },
+            error: function(){
+                alert("Error: ", status);
+            },
+            complete: function(){
+                console.log("Delete Complete!");
+            }
+        });
+        $(this).parent().remove();
+    });
     $('body').on('click', '.refresh', function(){
         console.log("Refresh Clicked!");
         getMessages();
