@@ -41,20 +41,20 @@ $(document).ready(function (){
         });
     });
     $('.dataDiv').on('click', 'button', function(){
+        $(this).parent().remove();
         $.ajax({
             type: "DELETE",
             url: "/things/" + $(this).data("id"),
             success: function(){
-                console.log("Hes dead Jim!");
+                console.log("For God sakes Jim, Im a doctor not a poolman!");
             },
             error: function(){
                 alert("Error: ", status);
             },
             complete: function(){
-                console.log("Delete Complete!");
+                console.log("deleted");
             }
         });
-        $(this).parent().remove();
     });
     $('body').on('click', '.refresh', function(){
         console.log("Refresh Clicked!");

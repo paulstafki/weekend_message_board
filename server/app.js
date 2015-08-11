@@ -12,12 +12,12 @@ var mongoDB = mongoose.connect(mongoURI).connection;
 
 mongoDB.on('error', function(err){
     if(err){
-        console.log("MONGO ERROR: ", err);
+        console.log("MONGO not god ", err);
     }
 });
 
 mongoDB.once('open', function(){
-    console.log("CONNECTED TO MONGODB!");
+    console.log("bear fight!");
 });
 
 var bodyParser = require('body-parser');
