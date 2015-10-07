@@ -13,19 +13,19 @@ function updateMessages(data) {
     for (var i = 0; i < data.length; i++) {
         $('.dataDiv').append('<div class="messageDiv"></div>');
         var $short = $('.dataDiv').children().last();
-        $short.append('<hr>');
+        //$short.append('<hr>');
         $short.append("<h3>" + data[i].name + "</h3>");
-        $short.append('<hr>');
+        //$short.append('<hr>');
         $short.append("<p>" + data[i].message + "</p>");
-        $short.append('<hr>');
         if (document.location.href == 'http://localhost:5000/secret') {
-            $short.append("<button data-id=" + data[i]._id + ">DELETE</button>");
+            $short.append("<button class='btn btn-primary' data-id=" + data[i]._id + ">DELETE</button>");
         }
+        $short.append('<hr>');
     }
 }
 
 $(document).ready(function (){
-    $('body').append('<button class="refresh">Refresh</button>');
+    $('.contentDiv').append('<button class="refresh btn btn-primary">Refresh</button>');
     $('#inputForm').submit(function(event) {
         event.preventDefault();
         var formData = $("#inputForm").serialize();
